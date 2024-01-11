@@ -1,6 +1,18 @@
+import "../index.css";
+import IMAGE from "../assets/wojak.png";
+
+const renderImage = () => {
+    const image = document.createElement("img");
+    image.className = "js-image";
+    image.src = IMAGE;
+    document.body.append(image);
+}
+
+
 const GET_USERS_URL = "https://jsonplaceholder.typicode.com/users";
 
 const dataContainer = document.querySelector("#data-container");
+
 
 const getUsers = async () => {
     try {
@@ -42,3 +54,5 @@ getUsers()
             renderUser(element)
         });
     });
+
+renderImage();
